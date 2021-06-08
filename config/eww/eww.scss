@@ -1,0 +1,326 @@
+* {
+		all: unset;
+}
+
+window {
+		background-color: #0D1119;
+		color: #ffd5cd;
+		font-family: Sarasa Fixed K;
+		border-radius: 10px;
+}
+
+.time-side {
+		margin: 20px 65px 0px 65px;
+		font-size: 60px;
+}
+
+.day-side {
+		font-size: 16px;
+		font-weight: bold;
+		color: #90c861;
+}
+
+.min-side {
+		color: #d35d6e;
+}
+
+.sliders-info slider {
+		all: unset;
+		color: #ffd5cd;
+}
+
+.slide-vol {
+		margin-top: 10px;
+}
+
+.slide-vol scale trough highlight {
+		all: unset;
+		background-color: #752FAD;
+		color: #000000;
+		border-radius: 10px;
+}
+
+.slider-mem scale trough highlight {
+		all: unset;
+		background-color: #2F6CAD;
+		color: #000000;
+		border-radius: 10px;
+}
+
+.slider-cpu scale trough highlight {
+		all: unset;
+		background-color: #2F9AAD;
+		color: #000000;
+		border-radius: 10px;
+}
+
+.slider-bat scale trough highlight {
+		all: unset;
+		background-color: #2FAD8E;
+		color: #000000;
+		border-radius: 10px;
+}
+
+.slide-vol scale trough {
+		all: unset;
+		background-color: #4e4e4e;
+		border-radius: 50px;
+		min-height: 5px;
+		min-width: 200px;
+		margin-top: 10px;
+		margin-left: 20px;
+}
+
+.slider-mem scale trough {
+		all: unset;
+		background-color: #4e4e4e;
+		border-radius: 50px;
+		min-height: 5px;
+		min-width: 200px;
+		margin-top: 10px;
+		margin-left: 17px;
+}
+
+.slider-cpu scale trough {
+		all: unset;
+		background-color: #4e4e4e;
+		border-radius: 50px;
+		min-height: 5px;
+		min-width: 200px;
+		margin-top: 10px;
+		margin-left: 17px;
+}
+
+.slider-bat scale trough {
+		all: unset;
+		background-color: #4e4e4e;
+		border-radius: 50px;
+		min-height: 5px;
+		min-width: 200px;
+		margin-top: 10px;
+		margin-left: 17px;
+}
+
+.label-vol {
+		color: #5F76AB;
+}
+
+.label-mem {
+		color: #4F6BAD;
+}
+
+.label-cpu {
+		color: #3F5FAD;
+}
+
+.label-bat {
+		color: #2F55AD;
+}
+
+.label-vol, .label-mem, .label-cpu, .label-bat {
+		margin-top: 10px;
+		font-family: Iosevka FT;
+		margin-left: 35px;
+		font-size: 35px;
+}
+
+.slider-bat {
+		margin-bottom: 10px;
+}
+
+.pic {
+		background-image: url("/home/xhandler/.config/eww/images/pic2.png");
+		background-repeat: no-repeat;
+		background-size: 200px;
+		min-height: 200px;
+		min-width: 200px;
+		margin: 40px 10px 0px 30px;
+		border-radius: 500px;
+}
+
+.pictext {
+		margin: 20px 10px 0px 30px;
+		color: #9F03CF;
+		font-size: 36px;
+}
+
+.subpictext {
+		margin: 0px 10px 0px 35px;
+		color: #844E94;
+		font-size: 24px;
+}
+
+.fetch-info {
+		margin-top: 40px;
+		font-size: 30px;
+}
+
+.fetch-info box {
+		padding-bottom: 12px;
+}
+
+.os-title {
+		color: #7633D7;
+}
+
+.os-val {
+		color: #4D425E;
+}
+
+.ker-title {
+		color: #672DBD;
+}
+
+.ker-val {
+		color: #5F5073;
+}
+
+.uptime-title {
+		color: #57269E;
+}
+
+.uptime-val {
+		color: #6A5A82;
+}
+
+.pkgs-title {
+		color: #4A2188;
+}
+
+.pkgs-val {
+		color: #7B6896;
+}
+
+.wm-title {
+		color: #391968;
+}
+
+.wm-val {
+		color: #836FA0;
+}
+
+.power-off {
+		font-size: 60px;
+		color: #9314CC;
+}
+
+.reboot {
+		font-size: 60px;
+		color: #A348CC;
+}
+
+.logout {
+		font-size: 60px;
+		color: #B071CC;
+}
+
+.power-off:hover, .reboot:hover, .logout:hover {
+		background-color: #2E3135;
+}
+
+.closeall {
+		font-size: 60px;
+		color: #823A93;
+}
+
+.closeall:hover {
+		background-color: #2E3135
+}
+
+.reload {
+		font-size: 60px;
+		color: #d35d6e;
+}
+
+.reload:hover {
+		color: #ffd5cd;
+}
+
+.b1, .b2, .b3, .b4, .b5, .b6, .b7 {
+		margin: 10px 30px 0px 30px;
+		font-size: 50px;
+		font-weight: 600;
+}
+
+.sep {
+		margin: 10px 5px 0px 5px;
+		font-size: 12px;
+		color: #ffd5cd;
+}
+
+.b1 {
+		color: #B08DCF;
+}
+
+.b2 {
+		color: #A26FCF;
+}
+
+.b3 {
+		color: #9551CF;
+}
+
+.b4 {
+		color: #8A3ACF;
+}
+
+.b5 {
+		color: #7E20CF;
+}
+
+.b6 {
+		color: #7915CF;
+}
+
+.b7 {
+		color: #7103CF;
+}
+
+.title {
+		color: #AB6DCF;
+		font-size: 16px;
+		margin-top: 25px;
+		font-weight: bold;
+		border-radius: 10px;
+		min-width: 40px;
+}
+
+.artist {
+		color: #935EB2;
+		font-size: 14px;
+		margin-top: 5px;
+		font-weight: bold;
+		border-radius: 10px;
+		min-width: 40px;
+}
+
+.musicbtn {
+		margin-top: 5px;
+		margin-left: 30px;
+}
+
+.musicbtn button {
+		font-size: 20px;
+		margin-right: 30px;
+}
+
+.pause-play {
+		color: #4E619D;
+}
+
+.prev, .next {
+		color: #4E619D;
+}
+
+.pause-play:hover, .prev:hover, .next:hover {
+		color: #933A83;
+}
+
+.art {
+		background-repeat: no-repeat;
+		background-size: 80px;
+		min-height: 70px;
+		min-width: 80px;
+		margin: 15px;
+		border-radius: 6px;
+}

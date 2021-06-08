@@ -1,0 +1,16 @@
+#!/bin/sh
+
+tmp_dir="/tmp/aweseome/art"
+cover_art=$tmp_dir/cover.png
+
+if [ ! -d $tmp_dir ];
+then
+		mkdir -p $tmp_dir
+fi
+
+link="$(playerctl --player=spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
+
+if [ $(playerctl --player=spotify metadata mpris:artUrl) ];
+then
+		curl -s "$link" --output $cover_art
+fi

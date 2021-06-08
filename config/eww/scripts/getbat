@@ -1,0 +1,30 @@
+#!/bin/bash
+
+bat_per=$(cat /sys/class/power_supply/BAT0/capacity)
+bat_status=$(cat /sys/class/power_supply/BAT0/status)
+
+if [[ $bat_status == "Not charging" ]]; then
+		bat_symbol=""
+elif [[ $bat_status == "Charging" ]]; then
+		bat_symbol=""
+else
+		if [[ $bat_per -ge 90 ]]; then
+				bat_symbol=""
+		elif [[ $bat_per -le 80 && $bat_per -gt 70 ]]; then 
+				bat_symbol=""
+		elif [[ $bat_per -le 70 && $bat_per -gt 60 ]]; then 
+				bat_symbol=""
+		elif [[ $bat_per -le 60 && $bat_per -gt 50 ]]; then 
+				bat_symbol=""
+		elif [[ $bat_per -le 50 && $bat_per -gt 40 ]]; then 
+				bat_symbol=""
+		elif [[ $bat_per -le 40 && $bat_per -gt 20 ]]; then 
+				bat_symbol=""
+		elif [[ $bat_per -le 20 && $bat_per -gt 10 ]]; then 
+				bat_symbol=""
+		else
+				bat_symbol=""
+		fi
+fi
+
+echo $bat_symbol;

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vol=$(printf "%.0f" $1)
+set=$(pamixer --set-volume $vol)

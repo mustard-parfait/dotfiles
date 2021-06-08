@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mem=$(free -m | awk 'NR==2{printf "%s", $2 }')
+
+echo $mem

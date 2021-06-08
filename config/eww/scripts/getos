@@ -1,0 +1,11 @@
+#!/bin/bash
+
+os_norm=$(lsb_release -sd)
+
+if [[ $os_norm == "\"Void Linux\"" ]]; then
+		os="Void"
+else
+		os="unknown"
+fi
+
+echo $os

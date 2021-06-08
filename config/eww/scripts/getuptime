@@ -1,0 +1,9 @@
+#!/bin/bash
+
+uptime=$(uptime -p | awk '{for (I=1;I<NF;I++) if ($I == "hours,") print $(I-1)}')
+
+if [[ $uptime == "" ]]; then
+		uptime=$(uptime -p | awk '{for (I=1;I<NF;I++) if ($I == "hour,") print $(I-1)}')
+fi
+
+echo $uptime"H"

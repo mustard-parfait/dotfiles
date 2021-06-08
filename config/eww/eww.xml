@@ -1,0 +1,301 @@
+<eww>
+		<definitions>
+
+				<!-- Time and day -->
+				<def name="time">
+						<box orientation="v" space-evenly="false">
+								<box orientation="h" class="time-side" space-evenly="true">
+										<box class="hour-side">{{hour}}</box>
+										<box class="min-side">{{min}}</box>
+								</box>
+
+								<box class="day-side">{{day}}</box>
+						</box>
+				</def>
+
+				<!-- Sliders -->
+				<def name="sliders">
+						<box orientation="v" space-evenly="false" class="sliders-info">
+								<box orientation="h" space-evenly="false" class="slide-vol">
+										<box class="label-vol"></box>
+										<scale min="0" max="101" value="{{vol}}" onchange="~/.config/eww/scripts/setvol {}"/>
+								</box>
+
+								<box orientation="h" space-evenly="false" class="slider-mem">
+										<box class="label-mem"></box>
+										<scale min="0" active="false" max="101" value="{{mem-used}}" />
+								</box>
+
+								<box orientation="h" space-evenly="false" class="slider-cpu">
+										<box class="label-cpu"></box>
+										<scale min="0" active="false" max="101" value="{{cpu-used}}" />
+								</box>
+
+								<box orientation="h" space-evenly="false" class="slider-bat">
+										<box class="label-bat">{{bat}}</box>
+										<scale min="0" active="false" max="101" value="{{bat-cur}}" />
+								</box>
+						</box>
+				</def>
+
+				<!-- Fetch EWW Box -->
+				<def name="fetch">
+						<box orientation="h" space-evenly="false" class="fetch">
+								<box orientation="v" space-evenly="false">
+										<box orientation="h" space-evenly="false">
+												<box class="pic" space-evenly="false"></box>
+										</box>
+
+										<box orientation="v" space-evenly="false">
+												<box class="pictext" valign="center">70xH</box>
+												<box class="subpictext" halign="center">error</box>
+										</box>
+								</box>
+
+								<box orientation="v" space-evenly="false" class="fetch-info">
+										<box class="os" valign="center" orientation="h">
+												<box class="os-title" valign="center">OS: </box>
+												<box class="os-val" valign="center">{{os}}</box>
+										</box>
+										<box class="ker" valign="center" orientation="h">
+												<box class="ker-title" valign="center">KER: </box>
+												<box class="ker-val" valign="center">{{ker}}</box>
+										</box>
+										<box class="uptime" valign="center" orientation="h">
+												<box class="uptime-title" valign="center">UPT: </box>
+												<box class="uptime-val" valign="center">{{uptime}}</box>
+										</box>
+										<box class="pkgs" valign="center" orientation="h">
+												<box class="pkgs-title" valign="center">PKGS: </box>
+												<box class="pkgs-val" valign="center">{{pkgs}}</box>
+										</box>
+										<box class="wm" valign="center" orientation="h">
+												<box class="wm-title" valign="center">WM: </box>
+												<box class="wm-val" valign="center">{{wm}}</box>
+										</box>
+								</box>
+						</box>
+				</def>
+
+				<!-- Spotify -->
+				<def name="spotify">
+						<box orientation="h" space-evenly="false" halign="center">
+								<box class="musicstuff" orientation="v" space-evenly="false" halign="center">
+										<box class="title" halign="center">{{title}}</box>
+										<box class="artist" halign="center">{{artist}}</box>
+										<box orientation="h" halign="center" class="musicbtn" space-evenly="false">
+												<button class="prev" onclick="playerctl --player=spotify previous"></button>
+												<button class="pause-play" onclick="playerctl --player=spotify play-pause">{{musicstat}}</button>
+												<button class="next" onclick="playerctl --player=spotify next"></button>
+										</box>
+								</box>
+						</box>
+				</def>
+
+				<!-- Spotify Art -->
+				<def name="spotifyart">
+						<box class="art" style="background-image: url('/tmp/aweseome/art/cover.png');">{{art}}</box>
+				</def>
+
+				<!-- Blur go brr -->
+				<def name="blur_full">
+						<button onclick="eww close-all">
+								<box orientation="v" space-evenly="true">
+								</box>
+						</button>
+				</def>
+
+				<!-- Poweroff -->
+				<def name="poweroff">
+						<box orientation="h" space-evenly="true">
+								<button class="power-off" onclick="~/.config/eww/scripts/shutdown"></button>
+						</box>
+				</def>
+
+				<!-- Reboot -->
+				<def name="reboot">
+						<box orientation="h" space-evenly="true">
+								<button class="reboot" onclick="~/.config/eww/scripts/reboot"></button>
+						</box>
+				</def>
+
+				<!-- Logout -->
+				<def name="logout">
+						<box orientation="h" space-evenly="true">
+								<button class="logout" onclick="~/.config/eww/scripts/logout"></button>
+						</box>
+				</def>
+
+				<!-- Close All -->
+				<def name="closeall">
+						<box orientation="h" space-evenly="true">
+								<button class="closeall" onclick="eww close-all"></button>
+						</box>
+				</def>
+
+				<!-- Reload -->
+				<def name="reload">
+						<box orientation="h" space-evenly="true">
+								<button class="reload" onclick="eww reload"></button>
+						</box>
+				</def>
+
+				<!-- Stuff -->
+				<def name="stuff">
+						<box orientation="h" space-evenly="false" clase="stuff">
+								<button class="b1" onclick="(kitty -e ranger ~/)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b2" onclick="(kitty -e ranger ~/Learning/UoB-Lectures)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b3" onclick="(kitty -e ranger ~/70xH-Git)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b4" onclick="(spotify)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b5" onclick="(brave-browser-stable)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b6" onclick="(kitty -e nvim)"></button>
+								<button class="sep" active="false"></button>
+								<button class="b7" onclick="(TZ=Europe/London discord-canary)"></button>
+						</box>
+				</def>
+
+		</definitions>
+
+
+		<variables>
+
+				<!-- Time and day -->
+				<script-var name="day" interval="15h">~/.config/eww/scripts/getday</script-var>
+				<script-var name="hour" interval="30m">date "+%H"</script-var>
+				<script-var name="min" interval="10s">date "+%M"</script-var>
+
+				<!-- Battery -->
+				<script-var name="bat" interval="1s">~/.config/eww/scripts/getbat</script-var>
+				<script-var name="bat-cur" interval="2m">~/.config/eww/scripts/getbatper</script-var>
+
+				<!-- Volume -->
+				<script-var name="vol" interval="1ms">pamixer --get-volume</script-var>
+
+				<!-- Memory -->
+				<script-var name="mem-used" interval="1s">~/.config/eww/scripts/getmemcur</script-var>
+
+				<!-- CPU -->
+				<script-var name="cpu-used" interval="1s">~/.config/eww/scripts/getcpu</script-var>
+
+				<!-- Fetch Stuff -->
+				<script-var name="os" interval="24h">~/.config/eww/scripts/getos</script-var>
+				<script-var name="ker" interval="12h">~/.config/eww/scripts/getker</script-var>
+				<script-var name="uptime" interval="1s">~/.config/eww/scripts/getuptime</script-var>
+				<script-var name="pkgs" interval="10s">~/.config/eww/scripts/getpkgs</script-var>
+				<script-var name="wm" interval="12h">~/.config/eww/scripts/getwm</script-var>
+
+				<!-- Spotify -->
+				<var name="cover">/tmp/aweseome/art/cover.png</var>
+				<script-var name="art" interval="1s">~/.config/eww/scripts/musicart</script-var>
+				<script-var name="musicstat" interval="1s">~/.config/eww/scripts/spotat</script-var>
+				<script-var name="title" interval="1s">playerctl --player=spotify metadata --format '{{ title }}'</script-var>
+				<script-var name="artist" interval="1s">playerctl --player=spotify metadata --format '{{ artist }}'</script-var>
+
+		</variables>
+
+
+		<windows>
+
+				<!-- Time and day -->
+				<window name="time">
+						<geometry x="10px" y="130px" width="300px" height="135px" />
+						<widget>
+								<time />
+						</widget>
+				</window>
+
+				<!-- Sliders -->
+				<window name="sliders">
+						<geometry x="1070px" y="320px" width="320px" height="245px" />
+						<widget>
+								<sliders />
+						</widget>
+				</window>
+
+				<!-- Fetch Box -->
+				<window name="fetch">
+						<geometry x="540px" y="320px" width="520px" height="360px" />
+						<widget>
+								<fetch />
+						</widget>
+				</window>
+
+				<!-- Spotify -->
+				<window name="spotify">
+						<geometry x="540px" y="200px" width="420px" height="110px" />
+						<widget>
+								<spotify />
+						</widget>
+				</window>
+
+				<!-- Spotify Art -->
+				<window name="spotifyart">
+						<geometry x="980px" y="200px" width="100px" height="110px" />
+						<widget>
+								<spotifyart />
+						</widget>
+				</window>
+
+				<!-- Blur go brr -->
+				<window name="blur_full">
+						<geometry x="0px" y="0px" width="100%" height="100%"/>
+						<widget>
+								<blur_full/>
+						</widget>
+				</window>
+
+				<!-- Poweroff -->
+				<window name="poweroff">
+						<geometry x="1070px" y="575px" width="100px" height="105px"/>
+						<widget>
+								<poweroff />
+						</widget>
+				</window>
+
+				<!-- Reboot -->
+				<window name="reboot">
+						<geometry x="1180px" y="575px" width="100px" height="105px"/>
+						<widget>
+								<reboot />
+						</widget>
+				</window>
+
+				<!-- Logout -->
+				<window name="logout">
+						<geometry x="1290px" y="575px" width="100px" height="105px"/>
+						<widget>
+								<logout />
+						</widget>
+				</window>
+
+				<!-- Close all -->
+				<window name="closeall">
+						<geometry x="1810px" y="10px" width="100px" height="100px"/>
+						<widget>
+								<closeall />
+						</widget>
+				</window>
+
+				<!-- Reload -->
+				<window name="reload">
+						<geometry x="1700px" y="10px" width="100px" height="100px"/>
+						<widget>
+								<reload />
+						</widget>
+				</window>
+
+				<!-- Stuff -->
+				<window name="stuff">
+						<geometry x="540px" y="690px" width="850px" height="110px" />
+						<widget>
+								<stuff />
+						</widget>
+				</window>
+
+		</windows>
+</eww>
